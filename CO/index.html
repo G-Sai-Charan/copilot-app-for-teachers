@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Copoilt</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+      body {
+          font-family: 'Courier New', Courier, monospace;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f0f0f0;
+      }
+      #generator {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #ffffff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.15);
+          width: 100%;
+      }
+      input {
+          width: 100%;
+          padding: 10px;
+          font-size: 16px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+      }
+      #keywords {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 10px;
+      }
+      .keyword {
+          margin: 15px;
+          padding: 15px;
+          background-color: #6d50e2;
+          color: #ffffff;
+          border-radius: 5px;
+          cursor: pointer;
+          Padding: 10px 15px;
+            margin: 15px 5px;
+            align-items: center;
+            justify-content: center;
+            display: inline-block;
+            text-decoration: none;
+    border-radius: 25px;
+      }
+      #output {
+          margin-top: 20px;
+          font-size: 24px;
+          color: #333333;
+      }
+      
+  </style>
+   </head>
+<body>
+  <div class="container">
+    <div class="topic"><h1>CoPilot</h1></div>
+    <div class="content">
+      <input type="radio" name="slider" checked id="home">
+      <input type="radio" name="slider" id="blog">
+      <input type="radio" name="slider" id="help">
+      <input type="radio" name="slider" id="code">
+      <input type="radio" name="slider" id="about">
+      <div class="list">
+        <label for="home" class="home">
+        <i class="fas fa-home"></i>
+        <span class="title">Home</span>
+      </label>
+      <label for="blog" class="blog">
+        <span class="icon"><i class="fas fa-code"></i></span>
+        <span class="title">Generate</span>
+      </label>
+      <label for="help" class="help">
+        <span class="icon"><i class="far fa-envelope"></i></span>
+        <span class="title">Help</span>
+      </label>
+      <label for="code" class="code">
+        <span class="icon"><i class="fas fa-blog"></i></span>
+        <span class="title">Feedback</span>
+      </label>
+      <!-- <label for="codinos" class="codinos">
+        <span class="icon"><i class="fas fa-code"></i></span>
+        <span class="title">Codinos</span>
+      </label> -->
+      <label for="about" class="about">
+        <span class="icon"><i class="far fa-user"></i></span>
+        <span class="title">About</span>
+      </label>
+      <div class="slider"></div>
+    </div>
+      <div class="text-content">
+        <div class="home text">
+          <div class="title">Home</div>
+          <p >Welcome to our web application, Copilot – your ultimate destination for bringing excitement and sparking the imagination in your classroom! As educators, we understand the importance of captivating your students' attention from the very beginning. That's why we've created Copilot, a unique tool designed specifically for teachers.
+            In the world of education, a "hook" is everything. It's that magical ingredient that turns an ordinary lesson into an extraordinary adventure. Copilot is here to provide you with an extensive range of hooks for any topic you can imagine.             
+            
+            In the world of education, a "hook" is everything. It's that magical ingredient that turns an ordinary lesson into an extraordinary adventure. Copilot is here to provide you with an extensive range of hooks for any topic you can imagine
+            Our mission is simple: to empower teachers like you with the tools to make learning exciting and engaging. With Copilot, you can inspire your students, spark their curiosity, and make every lesson a memorable experience. 
+
+            Join us on this journey and let Copilot be your co-pilot in the world of education. Explore, create, and ignite the passion for learning today!</p>
+            <div class="image">
+              <img src="C:\Users\shiva reddy\Downloads\WhatsApp Image 2023-10-07 at 15.40.14.jpeg" alt="">
+            </div>
+        </div>
+        <div class="blog text">
+          <div class="title">Hook Generator</div>
+            <div id="generator">
+               <textarea id="topic" style="align:center; padding: 20px;" rows="1" cols="120" style="text-size:50px;" placeholder="type"></textarea>
+              <div id="keywords">
+                  <div class="keyword" id="keyword1">question</div>
+                  <div class="keyword" id="keyword2">quotation</div>
+                  <div class="keyword" id="keyword3">informative</div>
+                  <div class="keyword" id="keyword3">story</div>
+                  <div class="keyword" id="keyword2">historical</div>
+                  <div class="keyword" id="keyword3">statiscal</div>
+                  <button id="generate" class="generate">Generate Text</button>
+              </div>
+              <!-- <button id="generate" class="generate">Generate Text</button> -->
+            <div class="outputContainer">
+              <div id="output" class="output" style="position: static;visibility:hidden; height: 200px; width:100%; overflow: scroll;"></div>
+            </div>
+            <a id = "link" href="" target="_blank" style="display:none">go for image</a>
+          </div>
+        </div>
+        <div class="help text">
+          <div class="title">Help Content</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores error neque, officia excepturi dolores quis dolor, architecto iusto deleniti a soluta nostrum. Fuga reiciendis beatae, dicta voluptatem, vitae eligendi maxime accusamus. Amet totam aut odio velit cumque autem neque sequi provident mollitia, nisi sunt maiores facilis debitis in officiis asperiores saepe quo soluta laudantium ad non quisquam! Repellendus culpa necessitatibus aliquam quod mollitia perspiciatis ducimus doloribus perferendis autem, omnis, impedit, veniam qui dolorem? Ipsam nihil assumenda, sit ratione blanditiis eius aliquam libero iusto, dolorum aut perferendis modi laboriosam sint dolor.</p>
+        </div>
+        <div class="code text">
+          <div class="title">Feedback</div>
+          <p>Welcome to our web application, Copilot – your ultimate destination for bringing excitement and sparking the imagination in your classroom! As educators, we understand the importance of captivating your students' attention from the very beginning. That's why we've created Copilot, a unique tool designed specifically for teachers.
+
+            In the world of education, a "hook" is everything. It's that magical ingredient that turns an ordinary lesson into an extraordinary adventure. Copilot is here to provide you with an extensive range of hooks for any topic you can imagine.             </p>
+        </div>
+        <div class="about text">
+          <div class="title">About Us</div>
+          <p>Edwisely is and will be the future of the Indian Engineering Education System. We understand that engineering is not just a degree, it is a gateway to building better products for a brighter tomorrow. Our pursuit is to change the current ways of learning & preparing and help students realise & achieve their full potential and have successful careers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.keyword').forEach(function(elem) {
+    elem.addEventListener('click', function() {
+        elem.style.backgroundColor = 'rgb(0, 123, 255)';
+    });
+});
+
+document.getElementById('generate').addEventListener('click', function() {
+    var topic = document.getElementById('topic').value;
+    var keyword = '';
+    document.querySelectorAll('.keyword').forEach(function(elem) {
+        if (elem.style.backgroundColor === 'rgb(0, 123, 255)') {
+            keyword = elem.innerText;
+        }
+    });
+
+    if (topic && keyword) {
+        var json = {
+            "topic": topic,
+            "filter": keyword
+        };
+        console.log(JSON.stringify(json, null, 2));
+        // Send JSON data to the server
+        var url = 'http://localhost:3000/search';
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*",
+                'Access-Control-Allow-Methods': "GET,PUT,POST,DELETE",
+            },
+            body:JSON.stringify(json),
+        })
+        .then(response => response.json())
+        .then(data => {console.log(data)
+        return data;
+    })
+    .then((data)=>{
+      document.getElementById('output').style.visibility = 'visible';
+      document.getElementById('link').style.display = 'block';
+      document.getElementById('output').innerText = data.output})
+.catch((error) => console.error('Error:', error));
+// image link
+//  fetch("http://localhost:5000/", {
+//             method: 'POST', 
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Access-Control-Allow-Origin': "*",
+//                 'Access-Control-Allow-Methods': "GET,PUT,POST,DELETE",
+//             },
+//             body:JSON.stringify({"message": document.getElementById('topic').value})
+//         })
+//         .then((result)=>{
+//           console.log(result.response);
+//           return result;
+//         });
+fetch("http://localhost:5000/", {
+    method: 'POST', 
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': "*",
+        'Access-Control-Allow-Methods': "GET,PUT,POST,DELETE",
+    },
+    body: JSON.stringify({"message": document.getElementById('topic').value})
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data.response); 
+    document.getElementById("link").href = data.response;
+})
+    }
+    else {
+        console.log('Please enter a topic and select a keyword.');
+        document.getElementById('output').innerText = 'Please enter a topic and select a keyword.';
+    }
+});
+
+
+</script>
+</body>
+</html>
